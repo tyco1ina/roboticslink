@@ -4,9 +4,12 @@ import './App.css';
 import { FindTeamButton } from './Components/Buttons/FindTeamButton/FindTeamButton'
 import { TeamPageFindTeamButton } from './Components/Buttons/TeamPageFindTeamButton/TeamPageFindTeamButton'
 import { BasicInfoPage } from './Components/Pages/BasicInfoPage/BasicInfoPage'
+import { TopTenPage } from './Components/Pages/TopTenPage/TopTenPage'
+import { TopTenBox } from './Components/OtherComponents/TopTenBox/TopTenBox'
 import { EventBox } from './Components/OtherComponents/EventBox/EventBox'
 // import { UpdateBox } from './Components/OtherComponents/UpdateBox/UpdateBox'
 import { BackButton } from './Components/Buttons/BackButton/BackButton'
+import { FindTopTenButton } from './Components/Buttons/FindTopTenButton/FindTopTenButton'
 
 // GLOBAL VARIABLE: CHECKS THE MOST RECENT SEARCH LOCATION SO THAT THIS THING KNOWS WHICH VARIABLE TO USE
 let lastSearchLocation = null;
@@ -22,6 +25,7 @@ class App extends React.Component {
     this.labelh4 = React.createRef()
     this.teamPageTeamNumberInput = React.createRef()
     this.statush4 = React.createRef()
+    this.topTenStatush4 = React.createRef()
 
     this.state = {
       currentPage: "Main Page",
@@ -291,6 +295,37 @@ class App extends React.Component {
     this.returnToMainScreen = () => {
       this.setState({currentPage: "Main Page"})
     }
+
+    this.getTopTenTeams = async () => {
+
+      this.topTenStatush4.current.innerText = "Getting the top ten teams..."
+
+      let devMode = true
+      let fetchString = ""
+      if (devMode) {
+        fetchString = fetchString + ""
+      } else {
+        fetchString = fetchString + "https://cors-anywhere.herokuapp.com/https://roboticslink.herokuapp.com"
+      }
+
+      const options = {
+        method:'GET',
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin":'*',
+          "Access-Control-Allow-Methods": 'POST'
+        },
+      }
+      
+      await fetch(fetchString + "/api/gettoptenteams", options)
+        .then(res=>res.json())
+        .then(res=>{
+          this.topTenTeamsArray = res
+
+          this.topTenStatush4.current.innerText = ""
+          this.setState({currentPage: "Top Ten Page"})
+      })
+    }
   }
   // METHOD TO GET ALL OF THE NECESSARY INFO
 
@@ -317,6 +352,9 @@ class App extends React.Component {
               <input id='team-number-input' type='text' ref={this.teamNumberInput}></input>
           </div>
 
+          <h4 id='top-ten-status-h4' ref={this.topTenStatush4}></h4>
+
+          <FindTopTenButton onClick={this.getTopTenTeams}/>
           <FindTeamButton onClick={this.getTeamInfo}/>
 
         </section>
@@ -328,13 +366,27 @@ class App extends React.Component {
             <input id='team-page-team-number-input' type='text' ref={this.teamPageTeamNumberInput}></input>
             <TeamPageFindTeamButton onClick={this.getTeamInfoTeamPage}/>
           </div>
-          <h4 id='status-h4' ref={this.statush4}></h4>
+          <h4 id='status-h4' ref={this.statush4}> </h4>
           <BackButton onClick={this.returnToMainScreen}/>
           <BasicInfoPage basicInfo={this.infoObject} eventsInfo={this.infoObject.event_results}/>
 
           {/* Sometimes this error will happen: "Warning: Each child in a list should have a unique "key" prop." */}
 
           {this.renderCorrectArray()}
+        </section>
+      )
+    } else if (this.state.currentPage === "Top Ten Page") {
+      return (
+        <section>
+          <div id='team-page-input-div'>
+            <input id='team-page-team-number-input' type='text' ref={this.teamPageTeamNumberInput}></input>
+            <TeamPageFindTeamButton onClick={this.getTeamInfoTeamPage}/>
+          </div>
+          <h4 id='status-h4' ref={this.statush4}> </h4>
+          <BackButton onClick={this.returnToMainScreen}/>
+          <TopTenPage/>
+
+          {Array.from(Array(10)).map((x, i) => <TopTenBox currentNumber={i+1} teamNumber={this.topTenTeamsArray[i][0]} teamName={this.topTenTeamsArray[i][1]}/>)}
         </section>
       )
     }

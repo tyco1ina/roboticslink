@@ -38,8 +38,6 @@ router.post('/', (req,res,next)=>{
     for (const property in apiGetObject2) {
       responseObject.events.push(apiGetObject2[property])
     }
-  
-    console.log(apiGetObject)
     
     console.log("[STATUS] Finding results for each event")
   

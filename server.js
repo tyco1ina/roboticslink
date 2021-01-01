@@ -24,6 +24,7 @@ const getRankInfoRoute = require("./routes/getrankinfo")
 const getWinsLossesTiesRoute = require("./routes/getwinslossesties")
 const getEventResultsRoute = require('./routes/geteventresults')
 const getMatchResultsRoute = require('./routes/getmatchresults')
+const getTopTenTeamsRoute = require('./routes/gettoptenteams')
 
 // ACKNOWLEDGE CONNECTION
 app.use('/api/getconnection', getConnectionRoute)
@@ -45,6 +46,9 @@ app.use('/api/geteventresults', getEventResultsRoute)
 
 // GET MATCH RESULTS
 app.use('/api/getmatchresults', getMatchResultsRoute)
+
+// GET TOP TEN TEAMS SEARCHED
+app.use('/api/gettoptenteams', getTopTenTeamsRoute)
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
