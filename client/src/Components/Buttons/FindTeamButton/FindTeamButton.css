@@ -1,0 +1,51 @@
+#find-team-button {
+    position:relative;
+
+    top:30px;
+
+    width:10%;
+    height:40px;
+    left:45%;
+
+    z-index:1001;
+
+    background-color:rgb(42, 117, 86);
+    color:white;
+    border-radius:100px;
+
+    cursor:pointer;
+
+    transition: background-color .3s, color .3s;
+}
+
+#find-team-button:hover {
+    background-color: rgb(58, 228, 100);
+    color:black;
+}
+
+#find-team-text {
+    position:relative;
+    top:7px;
+    font-size:20px;
+}
+
+@media only screen and (max-width: 480px) {
+    #find-team-button {
+        position:relative;
+    
+        top:100px;
+    
+        width:30%;
+        height:40px;
+        left:35%;
+    
+        z-index:1001;
+    
+        background-color:rgb(42, 117, 86);
+        color:white;
+    
+        cursor:pointer;
+    
+        transition: background-color .3s, color .3s;
+    }
+}

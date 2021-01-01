@@ -1,0 +1,28 @@
+#team-page-find-team-button {
+    position:absolute;
+
+    
+    left:0%;
+    top:.5px;
+    height:45px;
+    width:73px;
+
+    background-color:rgb(42, 117, 86);
+
+    color:white;
+    text-align:center;
+
+    cursor:pointer;
+
+    transition: color .3s, background-color .3s
+}
+
+#team-page-find-team-button:hover {
+    color:black;
+    background-color: rgb(58, 228, 100);
+}
+
+#team-page-find-team-text {
+    position:relative;
+    top:-10px;
+}

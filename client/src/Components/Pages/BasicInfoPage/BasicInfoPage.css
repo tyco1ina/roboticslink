@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+#header {
+    position:relative;
+    
+    width:100%;
+    height:75px;
+
+    opacity:.8;
+    background-color:rgb(0, 0, 0);
+}
+
+#robotics-link-logo {
+    position:absolute;
+    color:white;
+
+    top:-4px;
+    left:10px;
+    font-size:30px;
+}
+
+.decorative-div {
+    position: relative;
+
+    border-bottom:1px solid rgb(88, 88, 88);
+    width:30%;
+    left:35%;
+    top:-65px;
+}
+
+#render-section {
+    position:relative;
+    font-family:"Work Sans";
+
+    text-align:center;
+    justify-content: center;
+}
+
+#teampage-title-div {
+    position: relative;
+
+    top:0px
+}
+
+#teampage-title-h1 {
+    font-size:80px;
+}
+
+#teampage-title-h3 {
+    position: relative;
+    top:90px;
+
+    font-size:20px;
+}
+
+#general-info-div {
+    position:relative;
+    margin: 0 auto;
+
+    top:-50px;
+    width:80%;
+
+    border:1px solid black;
+    
+}
+
+.general-info-div-fifth {
+    position:relative;
+    display:inline-block;
+    width:20%;
+    padding-top:10px;
+    padding-bottom:10px;
+
+
+    text-align:center;
+}
+
+#event-results-h3 {
+    position:relative;
+    top:-40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 480px) {
+    .decorative-div {
+        position: relative;
+    
+        border-bottom:1px solid rgb(88, 88, 88);
+        width:30%;
+        left:35%;
+        top:-55px;
+    }
+    
+    #render-section {
+        position:relative;
+        font-family:"Montserrat";
+    
+        text-align:center;
+        justify-content: center;
+    }
+    
+    #teampage-title-div {
+        position: relative;
+    
+        top:30px
+    }
+    
+    #teampage-title-h1 {
+        font-size:60px;
+    }
+    
+    #teampage-title-h3 {
+        position: relative;
+        top:70px;
+    
+        font-size:20px;
+    }
+    
+    #general-info-div {
+        position:relative;
+        margin: 0 auto;
+    
+        top:-20px;
+        width:400px;
+    
+        border:1px solid black;
+        
+    }
+    
+    #general-info-h3 {
+        position:relative;
+        top:-10px;
+    }
+    
+    #stats-h3 {
+        position:relative;
+        top:0px;
+    }
+    
+    .main-stat-box {
+        position:relative;
+        top:-20px;
+        display:inline-block;
+    
+        width:120px;
+        height:120px;
+    
+        margin:5px;
+    
+    
+        border:1px solid black;
+    }
+    
+    .main-stat-box-header {
+        position:absolute;
+        width:100%;
+        height:30px;
+        
+    
+        background-color:rgb(42, 117, 86);
+    }
+    
+    .main-stat-box-header-h3 {
+        position:relative;
+        color:white;
+        top:-6px;
+
+        font-size:13px
+    }
+    
+    .main-stat-box-number {
+        position:relative;
+        font-size:60px;
+        top:-55px;
+    }
+    
+    #main-stat-box-number-wlt {
+        top:-15px;
+        font-size:35px;
+    }
+    
+    #event-results-h3 {
+        position:relative;
+        top:-20px;
+    }
+}

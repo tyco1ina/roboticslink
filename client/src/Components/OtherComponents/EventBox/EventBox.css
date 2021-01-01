@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Noto+Serif&display=swap");
+
+h1 {
+    position:relative;
+    font-size: 40px;
+    top:10px;
+}
+
+#event-box-div {
+    position:relative;
+    top:-50px;
+
+    width:80%;
+    left:10%;
+
+    margin-bottom:15px;
+
+    border:1px solid black;
+}
+
+.event-indicator-h3 {
+    position:absolute;
+    top:-9px;
+    width:50%;
+    left:25%;
+}
+
+#general-event-info-div {
+    position:relative;
+
+    top:0px;
+    width:100%;
+
+    border-bottom:1px solid black;
+    border-top:1px solid black;
+    
+}
+
+.general-event-info-div-third {
+    position:relative;
+    display:inline-block;
+
+    width:33.33333333333%;
+
+    text-align:center;
+}
+
+.stats-div {
+    position:relative;
+    display:inline-block;
+
+    width:250px;
+    height:140px;
+
+    margin:10px;
+    border-left:1px solid rgb(100, 100, 100);
+    border-right:1px solid rgb(100, 100, 100);
+}
+
+.stats-div-title {
+    position:absolute;
+
+    top:0px;
+    width:100%;
+    height:50px;
+}
+
+.stats-div-title-h3 {
+    position:relative;
+    top:-5px;
+}
+
+.stats-div-number {
+    position:relative;
+
+    top:-70px;
+    font-size:70px;
+    font-family:'Montserrat'
+}

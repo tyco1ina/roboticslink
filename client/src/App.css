@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+return {
+  position:relative;
+  text-align:center;
+
+  font-family:"Work Sans";
+}
+
+section {
+    position:relative;
+    font-family:"Work Sans";
+
+    text-align:center;
+}
+
+#title-div {
+    position: relative;
+
+    top:110px
+}
+
+#title-h1 {
+    font-size:80px;
+}
+
+#title-h3 {
+    position: relative;
+    top:-60px;
+
+    font-size:20px;
+}
+
+#team-number-input {
+    position: relative;
+
+    top:40px;
+
+    width:150px;
+    height:50px;
+    text-align: center;
+    font-size:35px;
+}
+
+#label-h4 {
+    position:relative;
+    top:60px;
+}
+
+#team-page-input-div {
+    position:absolute;
+
+    right:1%;
+    top:15px;
+    width:210px;
+
+    text-align:right;
+    z-index:100
+}
+
+#team-page-team-number-input{
+    position:relative;
+    right:0%;
+
+    height:40px;
+    width:130px;
+    font-size:30px;
+
+    text-align:center;
+}
+
+#status-h4 {
+    position:absolute;
+    top:60px;
+    right:1%;
+}
+
+@media only screen and (max-width: 480px) {
+    section {
+        position:relative;
+        font-family:"Montserrat";
+    
+        text-align:center;
+    }
+
+    #title-h1 {
+        position:relative;
+        font-size:50px;
+        top:50px;
+    }
+
+    #title-h3 {
+        position: relative;
+        top:10px;
+    
+        font-size:20px;
+    }
+
+    #team-number-input {
+        position: relative;
+    
+        top:110px;
+    
+        width:150px;
+        height:50px;
+        text-align: center;
+        font-size:35px;
+    }
+    
+    #label-h4 {
+        position:relative;
+        top:130px;
+    }
+}
