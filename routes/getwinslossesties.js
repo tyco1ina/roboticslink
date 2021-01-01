@@ -1,3 +1,6 @@
+// ROUTE TO GET THE NUMBER OF TOTAL WINS, LOSSES, AND TIES FROM THE SEASON
+// YEAR DEPENDENT? YES
+
 // GLOBAL IMPORTS
 const express = require('express');
 const router = express();
@@ -21,6 +24,7 @@ router.post('/', (req,res,next)=>{
       num_ties:0
     }
   
+    // 2021 CHANGE: CHANGE "2020" TO req.body.yearInput
     var url = `https://www.thebluealliance.com/api/v3/team/${search_team_string}/events/2020/statuses`;
     var key = process.env.REACT_APP_API_KEY;
     apiGetObject = JSON.parse(httpGet(url,key))

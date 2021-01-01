@@ -1,3 +1,6 @@
+// ROUTE TO GET BASIC INFORMATION ABOUT THE TEAM
+// YEAR DEPENDENT?: YES
+
 // GLOBAL IMPORTS
 const express = require('express');
 const router = express();

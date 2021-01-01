@@ -1,3 +1,6 @@
+// ROUTE TO GET THE DISTRICT INFO FROM THE API
+// YEAR DEPENDENT?: NO
+
 // GLOBAL IMPORTS
 const express = require('express');
 const router = express();
@@ -13,11 +16,14 @@ function httpGet(url,key) {
 }
 
 router.post('/', (req,res,next)=>{
+
+    // Create response object for responseObject and get the team searched from the request 
     const search_team_string = `frc${req.body.teamNumberInput}`
     let responseObject = {
       district:''
     }
   
+    // Make the api cal to get the districts from the past couple of years of the team
     var url = `https://www.thebluealliance.com/api/v3/team/${search_team_string}/districts`;
     var key = process.env.REACT_APP_API_KEY;
     apiGetObject = JSON.parse(httpGet(url,key))

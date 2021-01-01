@@ -1,3 +1,6 @@
+// ROUTE TO GET RESULTS FROM EACH EVENT
+// YEAR DEPENDENT?: YES
+
 // GLOBAL IMPORTS
 const express = require('express');
 const router = express();
@@ -23,9 +26,11 @@ router.post('/', (req,res,next)=>{
   
     const search_team_string = `frc${req.body.teamNumberInput}`
     var key = process.env.REACT_APP_API_KEY;
+    // 2021 CHANGE: CHANGE "2020" TO req.body.yearInput
     var url = `https://www.thebluealliance.com/api/v3/team/${search_team_string}/events/2020/simple`;
     apiGetObject = JSON.parse(httpGet(url,key))
   
+    // 2021 CHANGE: CHANGE "2020" TO req.body.yearInput
     var url2 = `https://www.thebluealliance.com/api/v3/team/${search_team_string}/events/2020/statuses`;
     const apiGetObject2 = JSON.parse(httpGet(url2,key))
   

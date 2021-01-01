@@ -1,3 +1,6 @@
+// ROUTE TO GET THE DISTRICT RANK AND DISTRICT POINTS FROM THE API
+// YEAR DEPENDENT?: YES
+
 // GLOBAL IMPORTS
 const express = require('express');
 const router = express();
@@ -26,12 +29,21 @@ router.post('/', (req,res,next)=>{
     var url = `https://www.thebluealliance.com/api/v3/team/${search_team_string}/districts`;
     var key = process.env.REACT_APP_API_KEY;
     apiGetObject = JSON.parse(httpGet(url,key))
-  
+
+    // if year input is 2020:
     try {
       responseObject.district_key = apiGetObject[apiGetObject.length - 2].key
     } catch (err) {
       responseObject.district_key = "Could not find district rank information"
     }
+
+    // 2021 CHANGE
+    // if year input is 2021:
+    // try {
+    //   responseObject.district_key = apiGetObject[apiGetObject.length - 1].key
+    // } catch (err) {
+    //   responseObject.district_key = "Could not find district rank information"
+    // }
 
   
     var url = `https://www.thebluealliance.com/api/v3/district/${responseObject.district_key}/rankings`;
